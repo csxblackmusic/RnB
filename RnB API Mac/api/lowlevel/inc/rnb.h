@@ -306,14 +306,38 @@ public:
     void play()
     {
         Samples.push_back(this);
-        if(snd!=nullptr && chan[chan_index]!=nullptr&&soundsystem!=nullptr)
+        bool sound_present=snd!=nullptr;
+        bool channel_present= chan[chan_index]!=nullptr;
+        bool soundsystem_present=soundsystem!=nullptr;
+        if( sound_present&& channel_present &&soundsystem!=nullptr)
         {
             result=soundsystem->playSound(snd,0,false,&(chan[chan_index]));
         }
         else
         {
-            cout<<"Either the sound or the channel hasnt been properly initialized"<<endl;
+            
+           if(!sound_present)
+           {
+               cout<<"The sound is empty"<<endl;
+           }
+            if(!channel_present && sound_present)
+            {
+                cout<<"The channel is empty"<<endl;
+                if (chan==nullptr)
+                {
+                    cout<<"channel array is also null"<<endl;
+                }
+                else
+                {
+                    result=soundsystem->playSound(snd,0,false,&(chan[chan_index]));
+                }
+            }
+            if(!soundsystem_present)
+            {
+                cout<<"The soundsystem is empty"<<endl;
+            }
         }
+        
     }
     
   /* void stop()
@@ -597,6 +621,7 @@ public:
         else
         {
             cout<<"channel is now empty"<<endl;
+            return 0;
         }
     }
     
@@ -658,10 +683,12 @@ public:
     }
     ~Sample()
     {
+       // close_sound();
         cout<<"destructor running"<<endl;
     }
 };
 vector<Sample*> Sample::Samples;
+
 class osc_rec
 {
 public:
@@ -675,35 +702,60 @@ public:
     string functype; //could be bool, string, int, int64
     string address = "";
 	std::thread osc_data_proc;
-    osc_rec(unsigned int port,const string search_address="",void(*func)(const string,vector<float>)=nullptr)
+    osc_rec(unsigned int port,const string search_address,void(*func)(const string,vector<float>))
     {
         osc_port = port;
         functype = "float";
         float_callback = func;
         address=search_address;
+        if(func==nullptr)
+        {
+            functype="null";
+        }
     }
-    osc_rec(unsigned int port,const string search_address="",void(*func)(const string,std::vector<int>)=nullptr)
+    
+    osc_rec(unsigned int port)
+    {
+        osc_port = port;
+        functype="null";
+        address="";
+    }
+    osc_rec(unsigned int port,const string search_address,void(*func)(const string,std::vector<int>))
     {
         osc_port = port;
         functype = "int";
         int_callback = func;
         address=search_address;
+        if(func==nullptr)
+        {
+            functype="null";
+        }
     }
     
-    osc_rec(unsigned int port,const string search_address="",void(*func)(const string,std::vector<double>)=nullptr)
+    osc_rec(unsigned int port,const string search_address,void(*func)(const string,std::vector<double>))
     {
         osc_port = port;
         functype = "double";
         double_callback = func;
         address=search_address;
+        if(func==nullptr)
+        {
+            functype="null";
+        }
     }
-	osc_rec(unsigned int port, const string search_address = "", void(*func)(const string, std::vector<string>) = nullptr)
+	osc_rec(unsigned int port, const string search_address, void(*func)(const string, std::vector<string>))
 	{
 		osc_port = port;
 		functype = "string";
 		string_callback = func;
 		address = search_address;
+        if(func==nullptr)
+        {
+            functype="null";
+        }
 	}
+    
+    
     string get_functype()
     {
         return functype;
@@ -718,11 +770,15 @@ public:
         return osc_port;
     }
     
-    osc_rec(unsigned int port,const string address="",void(*func)(const string,std::vector<long>)=nullptr)
+    osc_rec(unsigned int port,const string address,void(*func)(const string,std::vector<long>))
     {
         osc_port = port;
         functype = "int64";
         int64_callback  = func;
+        if(func==nullptr)
+        {
+            functype="null";
+        }
     }
     int64func get_int64_callback()
     {
@@ -779,6 +835,7 @@ void osc_server2(osc_rec &osc_obj)
 {
 	UdpSocket sock;
 	bool showalldata = false;
+    bool user_address_valid = true;
 	if (osc_obj.get_address() == "")
 	{
 		showalldata = true;
@@ -810,60 +867,89 @@ void osc_server2(osc_rec &osc_obj)
 					vector<bool> booldata;
 					vector<double> doubledata;
 					vector<string> stringdata;
+                    char last=' ';
+                    string new_addr=addr;
                     
-                    char last = addr.at(addr.size()-1);
-                    bool wildcard_found = false;
-                    string new_addr;
-                    if(last=='*')
+                    string new_obj_addr=osc_obj.get_address();
+                  //  cout<<"The address is: "<<addr<<endl;
+                  //  cout<<"The size of the address is: "<<addr.size()<<endl;
+                  //  cout<<"Last is: "<<last<<endl;
+                    if(new_obj_addr.size()>=1)
                     {
-                        new_addr = addr.substr(0,addr.size()-1);
-                        if ((osc_obj.get_address()).rfind(new_addr,0)==0)//rfind searches for the string provided starting at the position you provide at the second argument
+                        last = new_obj_addr.at(new_obj_addr.size()-1);
+                    }
+                    if(last=='*' )
+                    {
+                        if(new_obj_addr.size()>1)
                         {
-                            wildcard_found=true;
+                        new_obj_addr = osc_obj.get_address().substr(0,osc_obj.get_address().size()-1);
+                        new_addr= new_addr.substr(0,new_obj_addr.size());
+                        }
+                        else
+                        {
+                         if(new_obj_addr=="*")
+                         {
+                             showalldata=true;
+                         }
+                         else
+                         {
+                             cout<<"address is not valid"<<endl;
+                             user_address_valid=false;
+                         }
                         }
                     }
-					if (addr == osc_obj.get_address() || showalldata == true||wildcard_found)
+					if ((new_addr == new_obj_addr || showalldata == true)&& user_address_valid)
 					{
 						while (arg.nbArgRemaining())
 						{
-							if (arg.isInt32() && osc_obj.get_functype() == "int")
+							if (arg.isInt32() && (osc_obj.get_functype() == "int"||showalldata))
 							{
 								int a;
 								arg.popInt32(a);
 								if (showalldata)
 								{
-									cout << a << " received from " << addr << endl;
+									cout << a << " received from " << addr<<" Datatype is int"<<endl;
 								}
 								intdata.push_back(a);
 							}
-							else if (arg.isInt64() && osc_obj.get_functype() == "int64")
+                            if (arg.isDouble() && (osc_obj.get_functype() == "double"||showalldata))
+                            {
+                                double a;
+                                arg.popDouble(a);
+                                if (showalldata)
+                                {
+                                    cout << a << " received from " << addr<<" Datatype is double"<<endl;
+                                }
+                                doubledata.push_back(a);
+                            }
+							else if (arg.isInt64() && (osc_obj.get_functype() == "int64"||showalldata))
 							{
 								int64_t b;
 								
 								arg.popInt64(b);
 								if (showalldata)
 								{
-									cout << b << " received from " << addr << endl;
+									cout << b << " received from " << addr <<" Datatype is long" <<endl;
 								}
 								int64data.push_back(static_cast<long>(b));
 							}
-							else if (arg.isFloat() && osc_obj.get_functype() == "float")
+							else if (arg.isFloat() && (osc_obj.get_functype() == "float"||showalldata))
 							{
 								float dec;
 								arg.popFloat(dec);
 								if (showalldata)
 								{
-									cout << dec << " received from " << addr << endl;
+									cout << dec << " received from " << addr <<" Datatype is float" <<endl;
 								}
 								floatdata.push_back(dec);
 							}
-							else if (arg.isBool() && osc_obj.get_functype() == "bool")
+							else if (arg.isBool() && (osc_obj.get_functype() == "bool"||showalldata))
 							{
 								bool tf;
 								arg.popBool(tf);
 								if (showalldata)
 								{
-									cout << tf << " received from " << addr << endl;
+									cout << tf << " received from " << addr <<" Datatype is bool" <<endl;
 								}
 								booldata.push_back(tf);
 							}
@@ -873,36 +959,38 @@ void osc_server2(osc_rec &osc_obj)
 								arg.popStr(s);
 								if (showalldata)
 								{
-									cout << s << " received from " << addr << endl;
+									cout << s << " received from " << addr <<" Datatype is string" <<endl;
 								}
 								stringdata.push_back(s);
 							}
 						}
-						if (osc_obj.get_functype() == "bool")
-						{
-							osc_obj.get_bool_callback()(addr, booldata);
-						}
-						else if (osc_obj.get_functype() == "int")
-						{
-							osc_obj.get_int_callback()(addr, intdata);
-						}
-						else if (osc_obj.get_functype() == "float")
-						{
-							osc_obj.get_float_callback()(addr, floatdata);
-						}
-						else if (osc_obj.get_functype() == "int64")
-						{
-							osc_obj.get_int64_callback()(addr, int64data);
-						}
-						else if (osc_obj.get_functype() == "double")
-						{
-							osc_obj.get_double_callback()(addr, doubledata);
-						}
-						else if (osc_obj.get_functype() == "string")
-						{
-							osc_obj.get_string_callback()(addr, stringdata);
-						}
-
+                        if(addr!=""&& user_address_valid&& osc_obj.get_functype()!="null")
+                        {
+                            if (osc_obj.get_functype() == "bool")
+                            {
+                                osc_obj.get_bool_callback()(addr, booldata);
+                            }
+                            else if (osc_obj.get_functype() == "int")
+                            {
+                                osc_obj.get_int_callback()(addr, intdata);
+                            }
+                            else if (osc_obj.get_functype() == "float")
+                            {
+                                osc_obj.get_float_callback()(addr, floatdata);
+                            }
+                            else if (osc_obj.get_functype() == "int64")
+                            {
+                                osc_obj.get_int64_callback()(addr, int64data);
+                            }
+                            else if (osc_obj.get_functype() == "double")
+                            {
+                                osc_obj.get_double_callback()(addr, doubledata);
+                            }
+                            else if (osc_obj.get_functype() == "string")
+                            {
+                                osc_obj.get_string_callback()(addr, stringdata);
+                            }
+                        }
 					}
 				}
 			}

@@ -1,44 +1,38 @@
 #include "rnb.h"
 #include <vector>
-midOut ms50 = midOut();
-vector <unsigned char> msg2= { 0xf0,0x52,0x00,0x58,0x31,0x00,0x04,0x00,0x00,0xf7 }; //7th value changes the knob value
-//6th value chooses the selected param
-//2 IS THE FIRST PARAM on the first page, 3 IS THE 2ND, 4 IS THE 3RD on the first pg
-//5 is the first param on the 2nd pg, 6 is the sex
-//Sets the mix knob to 0 bt default
+Sample samp1 = Sample("Verse1.wav", 0); //The second argument indicates the channel - only one sample can be played per channel - you can have a max of 32 channels
+											  //the third argument indicates that the sample should play in loop mode where it loops until you stop the program
+											  //Put the full file path to your sound for the first argument - for now it only plays wav files
+Sample samp2 = Sample("Verse2.wav", 1);
+vector<Sample> samples;
 
-void process_muse(const string path, vector<float> data)//since no address is specified on line 23 all float data regardless of address will go here - non float data wont be picked up here.
+
+class Song
 {
+private:
+	string artist;
+	Sample stuff;
 
-    if(path=="/muse/algorithm/mellow")
-    {
-        cout<<"Received a value of: "<<data.at(0)<<"for mellow"<<endl;
-        unsigned char knob_val  = static_cast<unsigned char>(data.at(0));
-        msg2[7]= knob_val;
-        ms50.send_message(msg2);
-    }
-    if(path=="/muse/algorithm/concentration")
-    {
-        cout<<"Received a value of: "<<data.at(0)<<"for concentration"<<endl;
-        unsigned char knob_val  = static_cast<unsigned char>(data.at(0));
-        msg2[7]= knob_val;
-        ms50.send_message(msg2);
-    }
-}
+public:
+	Song(string a_name, const char * filename, int chan)
+	{
+		artist = a_name;
+		stuff = Sample(filename, chan);
+	}
+	void play()
+	{
+		cout<<"Now playing "<<artist<<endl;
+		stuff.play();
+		Sleep(stuff.get_length());
+	}
 
+};
 int main()
 {
-    osc_rec osc_receive(8000,"/muse/algorithm/concentration", process_muse); //muse algorithms only work if you put the exact path in here
-    osc_receive.start();    //sets the computer up to receive the data on port 8000
-  
-	vector<unsigned char> msg = { 0xc0,32 }; //change to  patch 33
-    vector<unsigned char> msg1= { 0xf0,0x52,0x00,0x58,0x50,0xf7 }; //change to edit parameter mode
-    ms50.send_message(msg);
-    ms50.send_message(msg1);
-    ms50.send_message(msg2);
-   
-    while (true)
-    {
-        sleep(200);
-    }
+	Song location = Song("Khalid", "Verse1.wav", 0);
+	location.play();
+	midOut ms50 = midOut();
+	vector<unsigned char> msg = { 192,45 };
+	ms50.send_message(msg);
+	sleep(500);
 }

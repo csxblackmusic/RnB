@@ -1,37 +1,40 @@
 #include "rnb.h"
+#include <vector>
+#include <iterator>
 using namespace std;
-Sample samp1 = Sample("/Users/djames18/Documents/FMOD_Programmers_APIwRnB /api/lowlevel/examples/media/Verse1.wav", 0, true); //Provide the full path to a wav file that youd want to play - the second argument says the sound will play on channel 0 - Only one sound can play on a channel at a time - The third argunment specifies whether the sample will loop continuously or not
+vector<Sample> playlist;
+int sample_index=0;
 
-void process_muse(const string path, vector<float> data)//since no address is specified on line 23 all float data regardless of address will go here - non float data wont be picked up here.
+void process_interface(const string address,vector<float>data)
 {
-	if(path =="/muse/algorithm/concentration")
+    for(int i=0;i<data.size();i++)
     {
-        cout<<"Received a value of: "<<data.at(0)<<"for concentration"<<endl;
-        samp1.set_volume(data.at(0)/100);//sets the volume of the sample to the concentration level
+        cout<<"Parameter"<<i+1<<":"<<" "<<data[i]<<" is from address: "<<address<<endl;
     }
-    else if(path=="/muse/algorithm/mellow")
+    if(data[0]==1)
     {
-        cout<<"Received a value of: "<<data.at(0)<<"for mellow"<<endl;
+        playlist.at(sample_index).play();
+        sample_index++;
     }
-    else if(path=="/muse/gyro")
+    
+    if(sample_index>=playlist.size())
     {
-         cout<<"Received a value of: "<<data.at(0)<<"for x" <<path<<endl;
-        cout<<"Received a value of: "<<data.at(1)<<"for y" <<path<<endl;
-        cout<<"Received a value of: "<<data.at(2)<<"for z" <<path<<endl;
+        sample_index=0;
     }
-    else if(path=="/muse/acc")
-    {
-        cout<<"Received a value of: "<<data.at(0)<<"for x" <<path<<endl;
-        cout<<"Received a value of: "<<data.at(1)<<"for y" <<path<<endl;
-        cout<<"Received a value of: "<<data.at(2)<<"for z" <<path<<endl;
-    }
-        
 }
+
 int main()
 {
-    osc_rec osc_receive(8000,"", process_muse); //routes the data to the process muse function above
-    osc_receive.start();    //sets the computer up to receive the data on port 8000
-	while (true)
-	{
-	}
+    Sample footsteps = Sample("class_songs/footstepsshort.wav", 0);
+    Sample honeywheat = Sample("class_songs/honeywheat_short.wav", 1);//Sample plays on chan 1
+    Sample slowdown=Sample("class_songs/slowdown_short.wav",2);
+    playlist={footsteps,honeywheat,slowdown};
+    osc_rec buttons(8000,"/1/push*",process_interface);
+    //osc_rec buttons(8000);
+    buttons.start();
+    while(true)
+    {
+        footsteps.upd();
+        usleep(50);
+    }
 }

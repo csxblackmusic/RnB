@@ -9,30 +9,15 @@
 /* Begin PBXBuildFile section */
 		6E08F580235622A9008E7580 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08F57F235622A8008E7580 /* CoreMIDI.framework */; };
 		6E08F582235622B3008E7580 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08F581235622B3008E7580 /* CoreFoundation.framework */; };
-		6E5667C524ACC8EC0056CF50 /* midiOutSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E5667C424ACC8EC0056CF50 /* midiOutSample.cpp */; };
-		6EA9B0AC24842D8D00CE3BE3 /* DrumsNoBassline.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08624842CCF00CE3BE3 /* DrumsNoBassline.wav */; };
-		6EA9B0AD24842D8D00CE3BE3 /* LocationVerse1NoBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08724842CCF00CE3BE3 /* LocationVerse1NoBass.wav */; };
-		6EA9B0AE24842D8D00CE3BE3 /* DooDooDo2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08824842CCF00CE3BE3 /* DooDooDo2.wav */; };
+		6E42F66F2615B01F00212775 /* rnbsample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E42F66E2615B01F00212775 /* rnbsample.cpp */; };
+		6E42F6702615B23C00212775 /* rnbSampleProj.app in Resources */ = {isa = PBXBuildFile; fileRef = AFFF96911630FB6A00804536 /* rnbSampleProj.app */; };
 		6EA9B0AF24842D8D00CE3BE3 /* wave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08924842CCF00CE3BE3 /* wave.mp3 */; };
-		6EA9B0B024842D8D00CE3BE3 /* Shaker1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08A24842CCF00CE3BE3 /* Shaker1.wav */; };
-		6EA9B0B124842D8D00CE3BE3 /* Guitar2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08B24842CCF00CE3BE3 /* Guitar2.wav */; };
-		6EA9B0B224842D8D00CE3BE3 /* Shaker2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08C24842CCF00CE3BE3 /* Shaker2.wav */; };
-		6EA9B0B324842D8D00CE3BE3 /* BasslineNoDrums.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08D24842CCF00CE3BE3 /* BasslineNoDrums.wav */; };
-		6EA9B0B424842D8D00CE3BE3 /* RideLocation.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08E24842CCF00CE3BE3 /* RideLocation.wav */; };
-		6EA9B0B524842D8D00CE3BE3 /* Guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08F24842CCF00CE3BE3 /* Guitar.wav */; };
-		6EA9B0B624842D8D00CE3BE3 /* LocationChorusWithBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09024842CCF00CE3BE3 /* LocationChorusWithBass.wav */; };
-		6EA9B0B724842D8D00CE3BE3 /* SendMeVocalsNoBass2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09124842CCF00CE3BE3 /* SendMeVocalsNoBass2.wav */; };
-		6EA9B0B824842D8D00CE3BE3 /* drumloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09224842CCF00CE3BE3 /* drumloop.wav */; };
-		6EA9B0B924842D8D00CE3BE3 /* jaguar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09324842CCF00CE3BE3 /* jaguar.wav */; };
-		6EA9B0BA24842D8D00CE3BE3 /* DooDooDo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09424842CCF00CE3BE3 /* DooDooDo.wav */; };
-		6EA9B0BB24842D8D00CE3BE3 /* SendMeVocalsNoBass1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09524842CCF00CE3BE3 /* SendMeVocalsNoBass1.wav */; };
 		6EA9B0BC24842D8D00CE3BE3 /* Verse2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09624842CCF00CE3BE3 /* Verse2.wav */; };
 		6EA9B0BD24842D8D00CE3BE3 /* Verse1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09724842CCF00CE3BE3 /* Verse1.wav */; };
-		6EA9B0BE24842D8D00CE3BE3 /* BasslineAndDrums.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09824842CCF00CE3BE3 /* BasslineAndDrums.wav */; };
 		6EC6761C2356206E00CFC871 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC6761B2356206E00CFC871 /* RtMidi.cpp */; };
 		6EC676202356214C00CFC871 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC6761E235620FE00CFC871 /* CoreAudio.framework */; };
-		AF77A84E165B0E00004D5BC2 /* libfmod.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF77A84C165B0E00004D5BC2 /* libfmod.dylib */; };
-		AF77A84F165B0E00004D5BC2 /* libfmodL.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF77A84D165B0E00004D5BC2 /* libfmodL.dylib */; };
+		AF77A84E165B0E00004D5BC2 /* libfmod.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF77A84C165B0E00004D5BC2 /* libfmod.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		AF77A84F165B0E00004D5BC2 /* libfmodL.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF77A84D165B0E00004D5BC2 /* libfmodL.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AFA41FB71654A10E005DF8E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA41FB61654A10E005DF8E4 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,26 +39,10 @@
 		6E08F57F235622A8008E7580 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		6E08F581235622B3008E7580 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6E08F58323562435008E7580 /* rnb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rnb.h; path = ../../inc/rnb.h; sourceTree = SOURCE_ROOT; };
-		6E5667C424ACC8EC0056CF50 /* midiOutSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midiOutSample.cpp; sourceTree = "<group>"; };
-		6EA9B08624842CCF00CE3BE3 /* DrumsNoBassline.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DrumsNoBassline.wav; sourceTree = "<group>"; };
-		6EA9B08724842CCF00CE3BE3 /* LocationVerse1NoBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LocationVerse1NoBass.wav; sourceTree = "<group>"; };
-		6EA9B08824842CCF00CE3BE3 /* DooDooDo2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DooDooDo2.wav; sourceTree = "<group>"; };
+		6E42F66E2615B01F00212775 /* rnbsample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rnbsample.cpp; sourceTree = SOURCE_ROOT; };
 		6EA9B08924842CCF00CE3BE3 /* wave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wave.mp3; sourceTree = "<group>"; };
-		6EA9B08A24842CCF00CE3BE3 /* Shaker1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Shaker1.wav; sourceTree = "<group>"; };
-		6EA9B08B24842CCF00CE3BE3 /* Guitar2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Guitar2.wav; sourceTree = "<group>"; };
-		6EA9B08C24842CCF00CE3BE3 /* Shaker2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Shaker2.wav; sourceTree = "<group>"; };
-		6EA9B08D24842CCF00CE3BE3 /* BasslineNoDrums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BasslineNoDrums.wav; sourceTree = "<group>"; };
-		6EA9B08E24842CCF00CE3BE3 /* RideLocation.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RideLocation.wav; sourceTree = "<group>"; };
-		6EA9B08F24842CCF00CE3BE3 /* Guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Guitar.wav; sourceTree = "<group>"; };
-		6EA9B09024842CCF00CE3BE3 /* LocationChorusWithBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LocationChorusWithBass.wav; sourceTree = "<group>"; };
-		6EA9B09124842CCF00CE3BE3 /* SendMeVocalsNoBass2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SendMeVocalsNoBass2.wav; sourceTree = "<group>"; };
-		6EA9B09224842CCF00CE3BE3 /* drumloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumloop.wav; sourceTree = "<group>"; };
-		6EA9B09324842CCF00CE3BE3 /* jaguar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jaguar.wav; sourceTree = "<group>"; };
-		6EA9B09424842CCF00CE3BE3 /* DooDooDo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DooDooDo.wav; sourceTree = "<group>"; };
-		6EA9B09524842CCF00CE3BE3 /* SendMeVocalsNoBass1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SendMeVocalsNoBass1.wav; sourceTree = "<group>"; };
 		6EA9B09624842CCF00CE3BE3 /* Verse2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Verse2.wav; sourceTree = "<group>"; };
 		6EA9B09724842CCF00CE3BE3 /* Verse1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Verse1.wav; sourceTree = "<group>"; };
-		6EA9B09824842CCF00CE3BE3 /* BasslineAndDrums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BasslineAndDrums.wav; sourceTree = "<group>"; };
 		6EC6761B2356206E00CFC871 /* RtMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = SOURCE_ROOT; };
 		6EC6761E235620FE00CFC871 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		AF77A84C165B0E00004D5BC2 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = ../../lib/libfmod.dylib; sourceTree = "<group>"; };
@@ -100,25 +69,9 @@
 		6EA9B08524842CCF00CE3BE3 /* media */ = {
 			isa = PBXGroup;
 			children = (
-				6EA9B08624842CCF00CE3BE3 /* DrumsNoBassline.wav */,
-				6EA9B08724842CCF00CE3BE3 /* LocationVerse1NoBass.wav */,
-				6EA9B08A24842CCF00CE3BE3 /* Shaker1.wav */,
-				6EA9B08824842CCF00CE3BE3 /* DooDooDo2.wav */,
 				6EA9B08924842CCF00CE3BE3 /* wave.mp3 */,
-				6EA9B08B24842CCF00CE3BE3 /* Guitar2.wav */,
-				6EA9B08C24842CCF00CE3BE3 /* Shaker2.wav */,
-				6EA9B08D24842CCF00CE3BE3 /* BasslineNoDrums.wav */,
-				6EA9B08E24842CCF00CE3BE3 /* RideLocation.wav */,
-				6EA9B08F24842CCF00CE3BE3 /* Guitar.wav */,
-				6EA9B09024842CCF00CE3BE3 /* LocationChorusWithBass.wav */,
-				6EA9B09124842CCF00CE3BE3 /* SendMeVocalsNoBass2.wav */,
-				6EA9B09224842CCF00CE3BE3 /* drumloop.wav */,
-				6EA9B09324842CCF00CE3BE3 /* jaguar.wav */,
-				6EA9B09424842CCF00CE3BE3 /* DooDooDo.wav */,
-				6EA9B09524842CCF00CE3BE3 /* SendMeVocalsNoBass1.wav */,
 				6EA9B09624842CCF00CE3BE3 /* Verse2.wav */,
 				6EA9B09724842CCF00CE3BE3 /* Verse1.wav */,
-				6EA9B09824842CCF00CE3BE3 /* BasslineAndDrums.wav */,
 			);
 			path = media;
 			sourceTree = SOURCE_ROOT;
@@ -165,7 +118,7 @@
 		AFFF96C3746D33BF00804536 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6E5667C424ACC8EC0056CF50 /* midiOutSample.cpp */,
+				6E42F66E2615B01F00212775 /* rnbsample.cpp */,
 				6E08F58323562435008E7580 /* rnb.h */,
 				6EC6761B2356206E00CFC871 /* RtMidi.cpp */,
 			);
@@ -199,7 +152,7 @@
 		AFFF96881630FB6A00804536 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Firelight Technologies";
 			};
 			buildConfigurationList = AFFF968B1630FB6A00804536 /* Build configuration list for PBXProject "rnbSampleProj" */;
@@ -224,25 +177,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA9B0AC24842D8D00CE3BE3 /* DrumsNoBassline.wav in Resources */,
-				6EA9B0AD24842D8D00CE3BE3 /* LocationVerse1NoBass.wav in Resources */,
-				6EA9B0AE24842D8D00CE3BE3 /* DooDooDo2.wav in Resources */,
 				6EA9B0AF24842D8D00CE3BE3 /* wave.mp3 in Resources */,
-				6EA9B0B024842D8D00CE3BE3 /* Shaker1.wav in Resources */,
-				6EA9B0B124842D8D00CE3BE3 /* Guitar2.wav in Resources */,
-				6EA9B0B224842D8D00CE3BE3 /* Shaker2.wav in Resources */,
-				6EA9B0B324842D8D00CE3BE3 /* BasslineNoDrums.wav in Resources */,
-				6EA9B0B424842D8D00CE3BE3 /* RideLocation.wav in Resources */,
-				6EA9B0B524842D8D00CE3BE3 /* Guitar.wav in Resources */,
-				6EA9B0B624842D8D00CE3BE3 /* LocationChorusWithBass.wav in Resources */,
-				6EA9B0B724842D8D00CE3BE3 /* SendMeVocalsNoBass2.wav in Resources */,
-				6EA9B0B824842D8D00CE3BE3 /* drumloop.wav in Resources */,
-				6EA9B0B924842D8D00CE3BE3 /* jaguar.wav in Resources */,
-				6EA9B0BA24842D8D00CE3BE3 /* DooDooDo.wav in Resources */,
-				6EA9B0BB24842D8D00CE3BE3 /* SendMeVocalsNoBass1.wav in Resources */,
 				6EA9B0BC24842D8D00CE3BE3 /* Verse2.wav in Resources */,
 				6EA9B0BD24842D8D00CE3BE3 /* Verse1.wav in Resources */,
-				6EA9B0BE24842D8D00CE3BE3 /* BasslineAndDrums.wav in Resources */,
+				6E42F6702615B23C00212775 /* rnbSampleProj.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E42F66F2615B01F00212775 /* rnbsample.cpp in Sources */,
 				6EC6761C2356206E00CFC871 /* RtMidi.cpp in Sources */,
-				6E5667C524ACC8EC0056CF50 /* midiOutSample.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,12 +202,37 @@
 		AFFF96991630FB6A00804536 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../../../lowlevel/inc;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = ../../../lowlevel/lib/libfmodL.dylib;
 				PRODUCT_NAME = $PROJECT_NAME;
@@ -280,11 +243,35 @@
 		AFFF969A1630FB6A00804536 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../../../lowlevel/inc;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = ../../../lowlevel/lib/libfmod.dylib;
 				PRODUCT_NAME = $PROJECT_NAME;
 				SDKROOT = macosx;
@@ -294,9 +281,9 @@
 		AFFF969C1630FB6A00804536 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				LIBRARY_SEARCH_PATHS = ../../../lowlevel/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -307,9 +294,9 @@
 		AFFF969D1630FB6A00804536 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				LIBRARY_SEARCH_PATHS = ../../../lowlevel/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

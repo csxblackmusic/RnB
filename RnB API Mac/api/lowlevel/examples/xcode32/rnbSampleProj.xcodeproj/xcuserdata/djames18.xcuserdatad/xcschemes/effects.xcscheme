@@ -47,7 +47,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/djames18/Downloads/RnB API Mac/api/lowlevel/examples/xcode32/"
+      customWorkingDirectory = "/Users/djames18/Desktop/RnB API Mac/api/lowlevel/examples/xcode32"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
