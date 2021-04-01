@@ -1,0 +1,272 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E08F580235622A9008E7580 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08F57F235622A8008E7580 /* CoreMIDI.framework */; };
+		6E08F582235622B3008E7580 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08F581235622B3008E7580 /* CoreFoundation.framework */; };
+		6EC6761C2356206E00CFC871 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EC6761B2356206E00CFC871 /* RtMidi.cpp */; };
+		6EC676202356214C00CFC871 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC6761E235620FE00CFC871 /* CoreAudio.framework */; };
+		6ECD2C512375FB9B00F4FB40 /* rnbsample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD2C502375FB9B00F4FB40 /* rnbsample.cpp */; };
+		6ECD2C532375FC0A00F4FB40 /* Song.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD2C522375FC0900F4FB40 /* Song.cpp */; };
+		6ED0967C237C910700E85910 /* SongQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0967B237C910700E85910 /* SongQueue.cpp */; };
+		AF77A84E165B0E00004D5BC2 /* libfmod.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF77A84C165B0E00004D5BC2 /* libfmod.dylib */; };
+		AF77A84F165B0E00004D5BC2 /* libfmodL.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF77A84D165B0E00004D5BC2 /* libfmodL.dylib */; };
+		AFA41FB71654A10E005DF8E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA41FB61654A10E005DF8E4 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF77A847165B0DC4004D5BC2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AF77A84E165B0E00004D5BC2 /* libfmod.dylib in CopyFiles */,
+				AF77A84F165B0E00004D5BC2 /* libfmodL.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6E08F57F235622A8008E7580 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		6E08F581235622B3008E7580 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		6E08F58323562435008E7580 /* rnb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rnb.h; path = ../../inc/rnb.h; sourceTree = SOURCE_ROOT; };
+		6EC6761B2356206E00CFC871 /* RtMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = SOURCE_ROOT; };
+		6EC6761E235620FE00CFC871 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		6ECD2C502375FB9B00F4FB40 /* rnbsample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rnbsample.cpp; sourceTree = "<group>"; };
+		6ECD2C522375FC0900F4FB40 /* Song.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Song.cpp; sourceTree = "<group>"; };
+		6ED0967A237C8F7900E85910 /* ListNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListNode.h; sourceTree = "<group>"; };
+		6ED0967B237C910700E85910 /* SongQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SongQueue.cpp; sourceTree = "<group>"; };
+		6ED0967D237C957400E85910 /* SongStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongStack.h; sourceTree = "<group>"; };
+		AF77A84C165B0E00004D5BC2 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = ../../lib/libfmod.dylib; sourceTree = "<group>"; };
+		AF77A84D165B0E00004D5BC2 /* libfmodL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodL.dylib; path = ../../lib/libfmodL.dylib; sourceTree = "<group>"; };
+		AFA41FB61654A10E005DF8E4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AFFF96911630FB6A00804536 /* rnbSampleProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = rnbSampleProj.app; path = stackQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFFF968E1630FB6A00804536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E08F582235622B3008E7580 /* CoreFoundation.framework in Frameworks */,
+				6E08F580235622A9008E7580 /* CoreMIDI.framework in Frameworks */,
+				6EC676202356214C00CFC871 /* CoreAudio.framework in Frameworks */,
+				AFA41FB71654A10E005DF8E4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EC6761D235620FE00CFC871 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E08F581235622B3008E7580 /* CoreFoundation.framework */,
+				6E08F57F235622A8008E7580 /* CoreMIDI.framework */,
+				6EC6761E235620FE00CFC871 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFFF96861630FB6A00804536 = {
+			isa = PBXGroup;
+			children = (
+				AFFF96C3746D33BF00804536 /* Sources */,
+				AFFF96BD163103C400804536 /* Libraries */,
+				AFFF96921630FB6A00804536 /* Products */,
+				6EC6761D235620FE00CFC871 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AFFF96921630FB6A00804536 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFFF96911630FB6A00804536 /* rnbSampleProj.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFFF96BD163103C400804536 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				AF77A84C165B0E00004D5BC2 /* libfmod.dylib */,
+				AF77A84D165B0E00004D5BC2 /* libfmodL.dylib */,
+				AFA41FB61654A10E005DF8E4 /* Cocoa.framework */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		AFFF96C3746D33BF00804536 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD2C522375FC0900F4FB40 /* Song.cpp */,
+				6ECD2C502375FB9B00F4FB40 /* rnbsample.cpp */,
+				6E08F58323562435008E7580 /* rnb.h */,
+				6EC6761B2356206E00CFC871 /* RtMidi.cpp */,
+				6ED0967A237C8F7900E85910 /* ListNode.h */,
+				6ED0967B237C910700E85910 /* SongQueue.cpp */,
+				6ED0967D237C957400E85910 /* SongStack.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFFF96901630FB6A00804536 /* effects */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFFF969B1630FB6A00804536 /* Build configuration list for PBXNativeTarget "effects" */;
+			buildPhases = (
+				AFFF968D1630FB6A00804536 /* Sources */,
+				AFFF968E1630FB6A00804536 /* Frameworks */,
+				AF77A847165B0DC4004D5BC2 /* CopyFiles */,
+				AFC16064167078A400003773 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = effects;
+			productName = effects;
+			productReference = AFFF96911630FB6A00804536 /* rnbSampleProj.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFFF96881630FB6A00804536 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Firelight Technologies";
+			};
+			buildConfigurationList = AFFF968B1630FB6A00804536 /* Build configuration list for PBXProject "stackQueue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AFFF96861630FB6A00804536;
+			productRefGroup = AFFF96921630FB6A00804536 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFFF96901630FB6A00804536 /* effects */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFC16064167078A400003773 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFFF968D1630FB6A00804536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ECD2C532375FC0A00F4FB40 /* Song.cpp in Sources */,
+				6ECD2C512375FB9B00F4FB40 /* rnbsample.cpp in Sources */,
+				6ED0967C237C910700E85910 /* SongQueue.cpp in Sources */,
+				6EC6761C2356206E00CFC871 /* RtMidi.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AFFF96991630FB6A00804536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = ../../../lowlevel/inc;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = ../../../lowlevel/lib/libfmodL.dylib;
+				PRODUCT_NAME = $PROJECT_NAME;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AFFF969A1630FB6A00804536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_ENABLE_CPP_RTTI = NO;
+				HEADER_SEARCH_PATHS = ../../../lowlevel/inc;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = ../../../lowlevel/lib/libfmod.dylib;
+				PRODUCT_NAME = $PROJECT_NAME;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AFFF969C1630FB6A00804536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				LIBRARY_SEARCH_PATHS = ../../../lowlevel/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		AFFF969D1630FB6A00804536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				LIBRARY_SEARCH_PATHS = ../../../lowlevel/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFFF968B1630FB6A00804536 /* Build configuration list for PBXProject "stackQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFFF96991630FB6A00804536 /* Debug */,
+				AFFF969A1630FB6A00804536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFFF969B1630FB6A00804536 /* Build configuration list for PBXNativeTarget "effects" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFFF969C1630FB6A00804536 /* Debug */,
+				AFFF969D1630FB6A00804536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AFFF96881630FB6A00804536 /* Project object */;
+}
