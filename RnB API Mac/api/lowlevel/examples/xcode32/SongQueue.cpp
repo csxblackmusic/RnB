@@ -1,67 +1,63 @@
-#include "rnb.h"
-#include <iostream>
-#include <deque>
-#include <stack>
-
-class SpotifyCover
+//
+//  SongQueue.cpp
+//  effects
+//
+//  Created by David James on 11/13/19.
+//  Copyright © 2019 Firelight Technologies. All rights reserved.
+//
+#ifndef SongQueue_h
+#define SongQueue_h
+#include "Song.cpp"
+class SongQueue
 {
 private:
-    deque<Sample> playlist;
-    stack<Sample> history;
+    ListNode * head;
+    ListNode * tail;
+    int size;
+    
 public:
-    void play_current_song()
+    SongQueue()
     {
-        if (playlist.size()>0)
-        {
-            Sample current_song = playlist.front();
-            current_song.play();
-            usleep(current_song.get_length() *1000);
-            history.push(current_song);
-            playlist.erase(playlist.begin());
-        }
+        head = nullptr;
+        tail = nullptr;
+        size = 0;
     }
     
-    void play_playlist()
+    void push(Song song_to_add)
     {
-        while(playlist.size()>0)
+        ListNode * newSongNode  = new ListNode(song_to_add);
+        if(size==0)
         {
-            play_current_song();
-        }
-    }
-    
-    void back()
-    {
-        if(history.size()>0)
-        {
-            Sample current_song = history.top();
-            playlist.push_front(current_song);
-            history.pop();
-            cout<<"Moved back one song"<<endl;
+            head =newSongNode;
+            tail = newSongNode;
+            size++;
         }
         else
         {
-            cout<<"You havent played any songs yet"<<endl;
+            tail->next = newSongNode;
+            tail = newSongNode;
+            size++;
+        }
+    }
+    void pop()
+    {
+        if(size>0)
+        {
+            ListNode* term = head;
+            head=head->next;
+            delete term;
+            size--;
         }
     }
     
-    void forward()
+    Song front()
     {
-        Sample current_song = playlist.front();
-        history.push(current_song);
-        playlist.erase(playlist.begin());
-        cout<<"You havent played any songs yet"<<endl;
+        Song first = head->track;
+        return first;
     }
     
-    void add_song(Sample new_song)
-    {
-        playlist.push_back(new_song);
-        cout<<"Added a new song"<<endl;
-    }
-};
 
-int main ()
-{
-    Sample song1 = Sample("media/Verse1.wav",0);
-    song1.play();
     
 }
+
+#endif

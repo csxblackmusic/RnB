@@ -10,7 +10,6 @@
 		6E08F580235622A9008E7580 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08F57F235622A8008E7580 /* CoreMIDI.framework */; };
 		6E08F582235622B3008E7580 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E08F581235622B3008E7580 /* CoreFoundation.framework */; };
 		6E42F66F2615B01F00212775 /* rnbsample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E42F66E2615B01F00212775 /* rnbsample.cpp */; };
-		6E42F6702615B23C00212775 /* rnbSampleProj.app in Resources */ = {isa = PBXBuildFile; fileRef = AFFF96911630FB6A00804536 /* rnbSampleProj.app */; };
 		6EA9B0AF24842D8D00CE3BE3 /* wave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B08924842CCF00CE3BE3 /* wave.mp3 */; };
 		6EA9B0BC24842D8D00CE3BE3 /* Verse2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09624842CCF00CE3BE3 /* Verse2.wav */; };
 		6EA9B0BD24842D8D00CE3BE3 /* Verse1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9B09724842CCF00CE3BE3 /* Verse1.wav */; };
@@ -180,7 +179,6 @@
 				6EA9B0AF24842D8D00CE3BE3 /* wave.mp3 in Resources */,
 				6EA9B0BC24842D8D00CE3BE3 /* Verse2.wav in Resources */,
 				6EA9B0BD24842D8D00CE3BE3 /* Verse1.wav in Resources */,
-				6E42F6702615B23C00212775 /* rnbSampleProj.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
